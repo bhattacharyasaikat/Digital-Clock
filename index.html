@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    img{
+        height: 400px;
+        width: 400px;
+    }
+    body{
+        font-family: 'Permanent Marker', cursive;
+        background-color: black;
+        color: whitesmoke;
+        text-align: center;
+        margin-top: 8rem;
+        font-size: 3.5rem;
+    }
+
+  h1{
+    font-size: 2rem;
+    color: red;
+  }
+
+</style>
+<body onload="DisplayTime()">
+
+   <img src="img.jpg" alt="">
+    <h1>  Enjoy your life! <br> Cz You are gradually moving towards your death... <br> </h1>
+    <div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function DisplayTime() {
+        const day = new Date();
+        let hour = day.getHours();
+        let min = day.getMinutes();
+        let sec = day.getSeconds() ;
+
+        let meridiem = "AM"
+       if(hour>12){
+        hour = hour-12 ;
+       }
+       if(hour>=12){
+         meridiem = "PM"
+       }
+
+       hour = hour < 10 ? "0" + hour : hour;
+        min = min < 10 ? "0" + min : min;
+       sec = sec < 10 ? "0" + sec : sec ;
+        let time = hour + " : " + min + " : " + sec +" " + meridiem ;
+
+
+        document.getElementsByTagName('div')[0].innerText = time
+        setInterval(DisplayTime, 1000)
+    }
+
+
+
+
+
+
+
+</script>
